@@ -4,7 +4,7 @@ import z from 'zod';
 import { prisma } from '@/lib/prisma';
 
 export async function deleteUser(app: FastifyInstance) {
-  app.delete('/users/:id', async (request, reply) => {
+  app.delete('/users/:id', { preValidation: [app.authenticate] }, async (request, reply) => {
     const userParams = z.object({
       id: z.string().uuid(),
     });

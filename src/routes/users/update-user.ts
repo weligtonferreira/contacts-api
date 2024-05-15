@@ -5,7 +5,7 @@ import z from 'zod';
 import { prisma } from '@/lib/prisma';
 
 export async function updateUser(app: FastifyInstance) {
-  app.put('/users/:id', async (request, reply) => {
+  app.put('/users/:id', { preValidation: [app.authenticate] }, async (request, reply) => {
     const updateUserBody = z.object({
       name: z.string(),
       email: z.string().email(),
