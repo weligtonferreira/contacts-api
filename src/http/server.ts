@@ -1,5 +1,6 @@
 import fastify from 'fastify';
 
+import { authenticateUser } from '@/routes/users/authenticate-user';
 import { createUser } from '@/routes/users/create-user';
 import { listUsers } from '@/routes/users/list-users';
 import { listUser } from '@/routes/users/list-user';
@@ -8,6 +9,7 @@ import { deleteUser } from '@/routes/users/delete-user';
 
 const app = fastify();
 
+app.register(authenticateUser);
 app.register(createUser);
 app.register(listUsers);
 app.register(listUser);
