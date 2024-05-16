@@ -1,7 +1,11 @@
 import { FastifyRequest, FastifyReply } from 'fastify';
 
 declare module 'fastify' {
+  interface FastifyRequest {
+    userId: string;
+  }
+
   interface FastifyInstance {
-    authenticate: (request: FastifyRequest, reply: FastifyReply) => Promise<void>;
+    verifyToken: (request: FastifyRequest, reply: FastifyReply) => Promise<void>;
   }
 }
