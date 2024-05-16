@@ -3,7 +3,7 @@ import { prisma } from '@/lib/prisma';
 import z from 'zod';
 
 export async function listUser(app: FastifyInstance) {
-  app.get('/users/:id', { preValidation: [app.authenticate] }, async (request, reply) => {
+  app.get('/users/:id', { preValidation: [app.verifyToken] }, async (request, reply) => {
     const userParams = z.object({
       id: z.string().uuid(),
     });
