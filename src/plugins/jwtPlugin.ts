@@ -16,7 +16,7 @@ async function jwtPlugin(app: FastifyInstance) {
       const decodedToken: UserTokenPayload = app.jwt.verify(token);
       request.userId = decodedToken.userId;
     } catch (err) {
-      return reply.status(401).send({ message: 'Unauthorized: invalid token', err });
+      return reply.status(401).send({ message: 'Unauthorized: invalid token' });
     }
   });
 }
