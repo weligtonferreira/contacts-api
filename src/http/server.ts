@@ -2,12 +2,12 @@ import fastify from 'fastify';
 
 import jwtPlugin from '@/plugins/jwtPlugin';
 
-import { authenticateUser } from '@/routes/users/authenticate-user';
-import { createUser } from '@/routes/users/create-user';
-import { listUsers } from '@/routes/users/list-users';
-import { listUser } from '@/routes/users/list-user';
-import { updateUser } from '@/routes/users/update-user';
-import { deleteUser } from '@/routes/users/delete-user';
+import { authenticateUser } from '@/routes/user/authenticate-user';
+import { createUser } from '@/routes/user/create-user';
+import { listUsers } from '@/routes/user/list-users';
+import { listUser } from '@/routes/user/list-user';
+import { updateUser } from '@/routes/user/update-user';
+import { deleteUser } from '@/routes/user/delete-user';
 
 const app = fastify();
 
