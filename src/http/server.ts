@@ -1,6 +1,6 @@
 import fastify from 'fastify';
 
-import fastifyPlugin from './fastifyPlugin';
+import jwtPlugin from '@/plugins/jwtPlugin';
 
 import { authenticateUser } from '@/routes/users/authenticate-user';
 import { createUser } from '@/routes/users/create-user';
@@ -11,7 +11,7 @@ import { deleteUser } from '@/routes/users/delete-user';
 
 const app = fastify();
 
-app.register(fastifyPlugin);
+app.register(jwtPlugin);
 
 app.register(authenticateUser);
 app.register(createUser);
