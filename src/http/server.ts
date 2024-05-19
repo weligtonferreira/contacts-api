@@ -10,6 +10,8 @@ import { listUserContacts } from '@/routes/user/list-user-contacts';
 import { updateUser } from '@/routes/user/update-user';
 import { deleteUser } from '@/routes/user/delete-user';
 
+import { createContact } from '@/routes/contact/create-contact';
+
 const app = fastify();
 
 app.register(jwtPlugin);
@@ -21,6 +23,8 @@ app.register(listUser);
 app.register(listUserContacts);
 app.register(updateUser);
 app.register(deleteUser);
+
+app.register(createContact);
 
 app.listen({ port: 3333 }).then(() => {
   console.log('HTTP Server is running...');
