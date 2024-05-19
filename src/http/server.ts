@@ -6,6 +6,7 @@ import { authenticateUser } from '@/routes/user/authenticate-user';
 import { createUser } from '@/routes/user/create-user';
 import { listUsers } from '@/routes/user/list-users';
 import { listUser } from '@/routes/user/list-user';
+import { listUserContacts } from '@/routes/user/list-user-contacts';
 import { updateUser } from '@/routes/user/update-user';
 import { deleteUser } from '@/routes/user/delete-user';
 
@@ -17,6 +18,7 @@ app.register(authenticateUser);
 app.register(createUser);
 app.register(listUsers);
 app.register(listUser);
+app.register(listUserContacts);
 app.register(updateUser);
 app.register(deleteUser);
 
