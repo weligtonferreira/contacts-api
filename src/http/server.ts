@@ -14,6 +14,7 @@ import { createContact } from '@/routes/contact/create-contact';
 import { listContact } from '@/routes/contact/list-contact';
 import { listContacts } from '@/routes/contact/list-contacts';
 import { updateContact } from '@/routes/contact/update-contact';
+import { deleteContact } from '@/routes/contact/delete-contact';
 
 const app = fastify();
 
@@ -31,6 +32,7 @@ app.register(createContact);
 app.register(listContact);
 app.register(listContacts);
 app.register(updateContact);
+app.register(deleteContact);
 
 app.listen({ port: 3333 }).then(() => {
   console.log('HTTP Server is running...');
