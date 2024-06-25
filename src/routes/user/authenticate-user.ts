@@ -29,6 +29,6 @@ export async function authenticateUser(app: FastifyInstance) {
 
     request.user = user;
 
-    return reply.status(200).send(token);
+    return reply.status(200).send({ token, userId: user.id });
   });
 }
