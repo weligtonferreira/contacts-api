@@ -1,4 +1,5 @@
 import fastify from 'fastify';
+import cors from '@fastify/cors';
 
 import jwtPlugin from '@/plugins/jwtPlugin';
 
@@ -17,6 +18,10 @@ import { updateContact } from '@/routes/contact/update-contact';
 import { deleteContact } from '@/routes/contact/delete-contact';
 
 const app = fastify();
+
+app.register(cors, {
+  origin: '*',
+});
 
 app.register(jwtPlugin);
 
